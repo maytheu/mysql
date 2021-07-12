@@ -1,0 +1,20 @@
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if remove}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+User successfully deleted, contact customer care if this is done in error within the next 30 days.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+{{#if error}}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+{{error}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
