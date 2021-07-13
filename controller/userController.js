@@ -1,14 +1,4 @@
-const mysql = require("mysql2");
-
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  password: "",
-});
+const pool = require("../query");
 
 // view route
 exports.view = (req, res) => {
@@ -44,7 +34,7 @@ exports.find = (req, res) => {
 
     //   user connected and quuery db
     connection.query(
-      "SELECT * FROM user WHERE first_name LIKE ? OR last_name LIKE ?  ",
+      "SELECT * FROM user WHERE first_name LIKE ? OR last_name LIKE ?",
       ["%" + search + "%", "%" + search + "%"],
       (err, rows) => {
         //relaese the connection when done
